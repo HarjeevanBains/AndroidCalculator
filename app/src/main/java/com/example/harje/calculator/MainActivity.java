@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-
+/**
     public final boolean isDouble(char first, char second) {
         if (first == ('/') && ((second == ('/')) || (second == ('+')) || (second == ('-')) || (second == ('*')))) {
             return true;
@@ -45,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return resultValue;
-    }
-
-    ;
+    };
+ **/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,26 +155,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (exp.charAt(i) == '-') {
                         resultValue = Double.parseDouble(exp.substring(0, i)) - Double.parseDouble(exp.substring(i + 1, exp.length()));
-                        ;
                     }
                     if (exp.charAt(i) == '*') {
                         resultValue = Double.parseDouble(exp.substring(0, i)) * Double.parseDouble(exp.substring(i + 1, exp.length()));
-                        ;
                     }
                     if (exp.charAt(i) == '+') {
                         resultValue = Double.parseDouble(exp.substring(0, i)) + Double.parseDouble(exp.substring(i + 1, exp.length()));
-                        ;
                     }
                 }
-
                 result.setText("" + df.format(resultValue));
-
             }
-
-            ;
-
         });
     }
-
-    ;
 };
