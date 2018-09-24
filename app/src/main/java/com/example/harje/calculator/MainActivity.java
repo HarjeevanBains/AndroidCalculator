@@ -11,7 +11,30 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final double calculate(String exp) {
+        for (int i = 0; i < exp.length(); i++) {
+            if (exp.charAt(i) == '/') {
+                double resultValue = Double.parseDouble(exp.substring(0, i)) / Double.parseDouble(exp.substring(i + 1, exp.length()));
+                return resultValue;
+            }
+            if (exp.charAt(i) == '-') {
+                double resultValue = Double.parseDouble(exp.substring(0, i)) - Double.parseDouble(exp.substring(i + 1, exp.length()));
+                return resultValue;
+            }
+            if (exp.charAt(i) == '*') {
+                double resultValue = Double.parseDouble(exp.substring(0, i)) * Double.parseDouble(exp.substring(i + 1, exp.length()));
+                return resultValue;
+            }
+            if (exp.charAt(i) == '+') {
+                double resultValue = Double.parseDouble(exp.substring(0, i)) + Double.parseDouble(exp.substring(i + 1, exp.length()));
+                return resultValue;
+            }
+        }
+        return 0.0;
+    }
+
     boolean answerSet = false;
+    int operatorCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView result;
-        result = (TextView) findViewById(R.id.Result);
+        result = findViewById(R.id.Result);
 
-        Double ValueOne, ValueTwo;
 
         final DecimalFormat df = new DecimalFormat("#.###");
 
@@ -131,21 +153,49 @@ public class MainActivity extends AppCompatActivity {
                         answerSet = false;
                         break;
                     case R.id.minus:
-                        result.setText(result.getText() + "-");
-                        answerSet = false;
+                        if (operatorCounter == 0) {
+                            result.setText(result.getText() + "-");
+                            answerSet = false;
+                            operatorCounter++;
+                        } else {
+                            result.setText("" + calculate(result.getText().toString()));
+                            operatorCounter = 0;
+                            minus.callOnClick();
+                        }
                         break;
                     case R.id.multiply:
-                        result.setText(result.getText() + "*");
-                        answerSet = false;
+                        if (operatorCounter == 0) {
+                            result.setText(result.getText() + "*");
+                            answerSet = false;
+                            operatorCounter++;
+                        } else {
+                            result.setText("" + calculate(result.getText().toString()));
+                            operatorCounter = 0;
+                            multiply.callOnClick();
+                        }
                         break;
                     case R.id.divide:
-                        result.setText(result.getText() + "/");
-                        answerSet = false;
+                        if (operatorCounter == 0) {
+                            result.setText(result.getText() + "/");
+                            answerSet = false;
+                            operatorCounter++;
+                        } else {
+                            result.setText("" + calculate(result.getText().toString()));
+                            operatorCounter = 0;
+                            divide.callOnClick();
+                        }
                         break;
                     case R.id.add:
-                        result.setText(result.getText() + "+");
-                        answerSet = false;
-                        break;
+                        if (operatorCounter == 0) {
+                            result.setText(result.getText() + "+");
+                            answerSet = false;
+                            operatorCounter++;
+                            break;
+                        } else {
+                            result.setText("" + calculate(result.getText().toString()));
+                            operatorCounter = 0;
+                            add.callOnClick();
+                        }
                 }
             }
         };
@@ -166,27 +216,14 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(listener);
 
         equal.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                double resultValue = 0;
-                String exp = result.getText().toString();
-
-                for (int i = 0; i < exp.length(); i++) {
-                    if (exp.charAt(i) == '/') {
-                        resultValue = Double.parseDouble(exp.substring(0, i)) / Double.parseDouble(exp.substring(i + 1, exp.length()));
-                    }
-                    if (exp.charAt(i) == '-') {
-                        resultValue = Double.parseDouble(exp.substring(0, i)) - Double.parseDouble(exp.substring(i + 1, exp.length()));
-                    }
-                    if (exp.charAt(i) == '*') {
-                        resultValue = Double.parseDouble(exp.substring(0, i)) * Double.parseDouble(exp.substring(i + 1, exp.length()));
-                    }
-                    if (exp.charAt(i) == '+') {
-                        resultValue = Double.parseDouble(exp.substring(0, i)) + Double.parseDouble(exp.substring(i + 1, exp.length()));
-                    }
-                }
+                double resultValue;
+                resultValue = calculate(result.getText().toString());
                 result.setText("" + df.format(resultValue));
                 answerSet = true;
+                operatorCounter = 0;
             }
         });
     }
