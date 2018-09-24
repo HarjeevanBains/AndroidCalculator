@@ -11,42 +11,7 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-/**
-    public final boolean isDouble(char first, char second) {
-        if (first == ('/') && ((second == ('/')) || (second == ('+')) || (second == ('-')) || (second == ('*')))) {
-            return true;
-        } else if (first == ('*') && ((second == ('/')) || (second == ('+')) || (second == ('-')) || (second == ('*')))) {
-            return true;
-        } else if (first == ('+') && ((second == ('/')) || (second == ('+')) || (second == ('-')) || (second == ('*')))) {
-            return true;
-        } else if (first == ('-') && ((second == ('/')) || (second == ('+')) || (second == ('-')) || (second == ('*')))) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-    public final int calculate(String exp) {
-        int resultValue = 0;
-        for (int i = 0; i < exp.length(); i++) {
-            if (exp.charAt(i) == '/') {
-                resultValue = Integer.parseInt(exp.substring(0, i)) / Integer.parseInt(exp.substring(i + 1, exp.length()));
-            }
-            if (exp.charAt(i) == '-') {
-                resultValue = Integer.parseInt(exp.substring(0, i)) - Integer.parseInt(exp.substring(i + 1, exp.length()));
-            }
-            if (exp.charAt(i) == '*') {
-                resultValue = Integer.parseInt(exp.substring(0, i)) * Integer.parseInt(exp.substring(i + 1, exp.length()));
-            }
-            if (exp.charAt(i) == '+') {
-                resultValue = Integer.parseInt(exp.substring(0, i)) + Integer.parseInt(exp.substring(i + 1, exp.length()));
-            }
-
-        }
-        return resultValue;
-    };
- **/
+    boolean answerSet = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView result;
         result = (TextView) findViewById(R.id.Result);
+
+        Double ValueOne, ValueTwo;
 
         final DecimalFormat df = new DecimalFormat("#.###");
 
@@ -80,49 +47,104 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.zero:
-                        result.setText(result.getText() + "0");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "0");
+                        } else {
+                            result.setText("0");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.one:
-                        result.setText(result.getText() + "1");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "1");
+                        } else {
+                            result.setText("1");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.two:
-                        result.setText(result.getText() + "2");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "2");
+                        } else {
+                            result.setText("2");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.three:
-                        result.setText(result.getText() + "3");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "3");
+                        } else {
+                            result.setText("3");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.four:
-                        result.setText(result.getText() + "4");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "4");
+                        } else {
+                            result.setText("4");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.five:
-                        result.setText(result.getText() + "5");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "5");
+                        } else {
+                            result.setText("5");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.six:
-                        result.setText(result.getText() + "6");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "6");
+                        } else {
+                            result.setText("6");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.seven:
-                        result.setText(result.getText() + "7");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "7");
+                        } else {
+                            result.setText("7");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.eight:
-                        result.setText(result.getText() + "8");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "8");
+                        } else {
+                            result.setText("8");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.nine:
-                        result.setText(result.getText() + "9");
+                        if (answerSet == false) {
+                            result.setText(result.getText() + "9");
+                        } else {
+                            result.setText("9");
+                            answerSet = false;
+                        }
                         break;
                     case R.id.clear:
                         result.setText("");
+                        answerSet = false;
                         break;
                     case R.id.minus:
                         result.setText(result.getText() + "-");
+                        answerSet = false;
                         break;
                     case R.id.multiply:
                         result.setText(result.getText() + "*");
+                        answerSet = false;
                         break;
                     case R.id.divide:
                         result.setText(result.getText() + "/");
+                        answerSet = false;
                         break;
                     case R.id.add:
                         result.setText(result.getText() + "+");
+                        answerSet = false;
                         break;
                 }
             }
@@ -164,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 result.setText("" + df.format(resultValue));
+                answerSet = true;
             }
         });
     }
