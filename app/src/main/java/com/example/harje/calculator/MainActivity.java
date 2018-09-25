@@ -12,6 +12,9 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     public final double calculate(String exp) {
+        if(exp == ""){
+            return 0;
+        }
         for (int i = 0; i < exp.length(); i++) {
             if (exp.charAt(i) == '/') {
                 double resultValue = Double.parseDouble(exp.substring(0, i)) / Double.parseDouble(exp.substring(i + 1, exp.length()));
@@ -30,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 return resultValue;
             }
         }
-        return 0.0;
+        return Double.parseDouble(exp);
     }
 
     boolean answerSet = false;
     int operatorCounter = 0;
+    int operatorRepeat = 0;
+    int equalCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,92 +76,140 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.zero:
                         if (answerSet == false) {
                             result.setText(result.getText() + "0");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("0");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.one:
                         if (answerSet == false) {
                             result.setText(result.getText() + "1");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("1");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.two:
                         if (answerSet == false) {
                             result.setText(result.getText() + "2");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("2");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.three:
                         if (answerSet == false) {
                             result.setText(result.getText() + "3");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("3");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.four:
                         if (answerSet == false) {
                             result.setText(result.getText() + "4");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("4");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.five:
                         if (answerSet == false) {
                             result.setText(result.getText() + "5");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("5");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.six:
                         if (answerSet == false) {
                             result.setText(result.getText() + "6");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("6");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.seven:
                         if (answerSet == false) {
                             result.setText(result.getText() + "7");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("7");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.eight:
                         if (answerSet == false) {
                             result.setText(result.getText() + "8");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                         } else {
                             result.setText("8");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.nine:
                         if (answerSet == false) {
                             result.setText(result.getText() + "9");
+                            equalCounter = 0;
+                            operatorRepeat = 0;
                         } else {
                             result.setText("9");
+                            operatorRepeat = 0;
+                            equalCounter = 0;
                             answerSet = false;
                         }
                         break;
                     case R.id.clear:
                         result.setText("");
+                        operatorRepeat = 0;
+                        equalCounter = 0;
                         answerSet = false;
                         break;
                     case R.id.minus:
+                        equalCounter = 0;
+                        if (operatorRepeat != 0){
+                            result.setText("invalid, press CLEAR to reset");
+                            break;
+                        }
                         if (operatorCounter == 0) {
                             result.setText(result.getText() + "-");
                             answerSet = false;
                             operatorCounter++;
+                            operatorRepeat++;
                         } else {
                             result.setText("" + calculate(result.getText().toString()));
                             operatorCounter = 0;
@@ -164,10 +217,16 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.multiply:
+                        equalCounter = 0;
+                        if (operatorRepeat != 0){
+                            result.setText("invalid, press CLEAR to reset");
+                            break;
+                        }
                         if (operatorCounter == 0) {
                             result.setText(result.getText() + "*");
                             answerSet = false;
                             operatorCounter++;
+                            operatorRepeat++;
                         } else {
                             result.setText("" + calculate(result.getText().toString()));
                             operatorCounter = 0;
@@ -175,10 +234,16 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.divide:
+                        equalCounter = 0;
+                        if (operatorRepeat != 0){
+                            result.setText("invalid, press CLEAR to reset");
+                            break;
+                        }
                         if (operatorCounter == 0) {
                             result.setText(result.getText() + "/");
                             answerSet = false;
                             operatorCounter++;
+                            operatorRepeat++;
                         } else {
                             result.setText("" + calculate(result.getText().toString()));
                             operatorCounter = 0;
@@ -186,16 +251,22 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.add:
+                        equalCounter = 0;
+                        if (operatorRepeat != 0){
+                            result.setText("invalid, press CLEAR to reset");
+                            break;
+                        }
                         if (operatorCounter == 0) {
                             result.setText(result.getText() + "+");
                             answerSet = false;
                             operatorCounter++;
-                            break;
+                            operatorRepeat++;
                         } else {
                             result.setText("" + calculate(result.getText().toString()));
                             operatorCounter = 0;
                             add.callOnClick();
                         }
+                        break;
                 }
             }
         };
@@ -219,11 +290,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                double resultValue;
-                resultValue = calculate(result.getText().toString());
-                result.setText("" + df.format(resultValue));
-                answerSet = true;
-                operatorCounter = 0;
+                if (operatorRepeat != 0){
+                    result.setText("invalid, press CLEAR to reset");
+                }
+                else if(equalCounter == 0) {
+                    double resultValue;
+                    resultValue = calculate(result.getText().toString());
+                    result.setText("" + df.format(resultValue));
+                    answerSet = true;
+                    operatorCounter = 0;
+                    equalCounter++;
+                }
             }
         });
     }
