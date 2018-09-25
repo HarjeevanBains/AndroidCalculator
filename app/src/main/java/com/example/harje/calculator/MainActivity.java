@@ -74,125 +74,145 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.zero:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "0");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("0");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "0");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("0");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.one:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "1");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("1");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "1");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("1");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.two:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "2");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("2");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "2");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("2");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.three:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "3");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("3");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "3");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("3");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.four:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "4");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("4");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "4");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("4");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.five:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "5");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("5");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "5");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("5");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.six:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "6");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("6");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "6");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("6");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.seven:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "7");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("7");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "7");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("7");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.eight:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "8");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                        } else {
-                            result.setText("8");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "8");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                            } else {
+                                result.setText("8");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.nine:
-                        if (answerSet == false) {
-                            result.setText(result.getText() + "9");
-                            equalCounter = 0;
-                            operatorRepeat = 0;
-                        } else {
-                            result.setText("9");
-                            operatorRepeat = 0;
-                            equalCounter = 0;
-                            answerSet = false;
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            if (answerSet == false) {
+                                result.setText(result.getText() + "9");
+                                equalCounter = 0;
+                                operatorRepeat = 0;
+                            } else {
+                                result.setText("9");
+                                operatorRepeat = 0;
+                                equalCounter = 0;
+                                answerSet = false;
+                            }
+                            break;
                         }
-                        break;
                     case R.id.clear:
                         result.setText("");
                         operatorRepeat = 0;
@@ -200,73 +220,81 @@ public class MainActivity extends AppCompatActivity {
                         answerSet = false;
                         break;
                     case R.id.minus:
-                        equalCounter = 0;
-                        if (operatorRepeat != 0){
-                            result.setText("invalid, press CLEAR to reset");
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            equalCounter = 0;
+                            if (operatorRepeat != 0) {
+                                result.setText("invalid, press CLEAR to reset");
+                                break;
+                            }
+                            if (operatorCounter == 0) {
+                                result.setText(result.getText() + "-");
+                                answerSet = false;
+                                operatorCounter++;
+                                operatorRepeat++;
+                            } else {
+                                result.setText("" + calculate(result.getText().toString()));
+                                operatorCounter = 0;
+                                minus.callOnClick();
+                            }
                             break;
                         }
-                        if (operatorCounter == 0) {
-                            result.setText(result.getText() + "-");
-                            answerSet = false;
-                            operatorCounter++;
-                            operatorRepeat++;
-                        } else {
-                            result.setText("" + calculate(result.getText().toString()));
-                            operatorCounter = 0;
-                            minus.callOnClick();
-                        }
-                        break;
                     case R.id.multiply:
-                        equalCounter = 0;
-                        if (operatorRepeat != 0){
-                            result.setText("invalid, press CLEAR to reset");
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            equalCounter = 0;
+                            if (operatorRepeat != 0) {
+                                result.setText("invalid, press CLEAR to reset");
+                                break;
+                            }
+                            if (operatorCounter == 0) {
+                                result.setText(result.getText() + "*");
+                                answerSet = false;
+                                operatorCounter++;
+                                operatorRepeat++;
+                            } else {
+                                result.setText("" + calculate(result.getText().toString()));
+                                operatorCounter = 0;
+                                multiply.callOnClick();
+                            }
                             break;
                         }
-                        if (operatorCounter == 0) {
-                            result.setText(result.getText() + "*");
-                            answerSet = false;
-                            operatorCounter++;
-                            operatorRepeat++;
-                        } else {
-                            result.setText("" + calculate(result.getText().toString()));
-                            operatorCounter = 0;
-                            multiply.callOnClick();
-                        }
-                        break;
                     case R.id.divide:
-                        equalCounter = 0;
-                        if (operatorRepeat != 0){
-                            result.setText("invalid, press CLEAR to reset");
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            equalCounter = 0;
+                            if (operatorRepeat != 0) {
+                                result.setText("invalid, press CLEAR to reset");
+                                break;
+                            }
+                            if (operatorCounter == 0) {
+                                result.setText(result.getText() + "/");
+                                answerSet = false;
+                                operatorCounter++;
+                                operatorRepeat++;
+                            } else {
+                                result.setText("" + calculate(result.getText().toString()));
+                                operatorCounter = 0;
+                                divide.callOnClick();
+                            }
                             break;
                         }
-                        if (operatorCounter == 0) {
-                            result.setText(result.getText() + "/");
-                            answerSet = false;
-                            operatorCounter++;
-                            operatorRepeat++;
-                        } else {
-                            result.setText("" + calculate(result.getText().toString()));
-                            operatorCounter = 0;
-                            divide.callOnClick();
-                        }
-                        break;
                     case R.id.add:
-                        equalCounter = 0;
-                        if (operatorRepeat != 0){
-                            result.setText("invalid, press CLEAR to reset");
+                        if (result.getText() != "invalid, press CLEAR to reset") {
+                            equalCounter = 0;
+                            if (operatorRepeat != 0) {
+                                result.setText("invalid, press CLEAR to reset");
+                                break;
+                            }
+                            if (operatorCounter == 0) {
+                                result.setText(result.getText() + "+");
+                                answerSet = false;
+                                operatorCounter++;
+                                operatorRepeat++;
+                            } else {
+                                result.setText("" + calculate(result.getText().toString()));
+                                operatorCounter = 0;
+                                add.callOnClick();
+                            }
                             break;
                         }
-                        if (operatorCounter == 0) {
-                            result.setText(result.getText() + "+");
-                            answerSet = false;
-                            operatorCounter++;
-                            operatorRepeat++;
-                        } else {
-                            result.setText("" + calculate(result.getText().toString()));
-                            operatorCounter = 0;
-                            add.callOnClick();
-                        }
-                        break;
                 }
             }
         };
@@ -305,3 +333,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 };
+
+//if (result.getText() != "invalid, press CLEAR to reset"){
